@@ -1,0 +1,53 @@
+<%- include("partials/header"); -%>
+   
+<% if (message) { %>
+    <script>
+       var m = "<%= message %>";  
+       alert("Sorry🥺 City not found! Redirecting to home page. \nTry again!");          
+    </script>
+<% } %>
+
+
+<div class="header">
+    <div id="searchBar" class="search">
+        <div id="searchArrow"><img id="searchArrowImg" src="images/arrow.png" alt="" srcset=""></div>
+        <form action="/" method="POST">
+            <input id="cityInput" type="text" name="cityName" placeholder="Enter city">
+            <button type="submit"><img class="search-icon" src="images/loupe.png" alt="" srcset=""></button>
+        </form>
+    </div>
+</div>
+
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+    <iframe src="https://maps.google.com/maps?q=<%= cityName %>&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+        style="border:0" allowfullscreen></iframe>
+</div>
+
+<div id="weaBox" class="weather-box">
+    
+    <div id="boxBtn" class="hide-btn"><img id="boxArrow" src="images/arrow.png" alt="" srcset=""></div>
+
+    <div class="top-block">
+        <p class="city"><%= cityName %></p>
+        <img class="placeholder" src="images/placeholder.png" alt="" srcset="">
+        <img id="weaIcon" class="weather-icon" src="images/weather-icon/<%= icon %>.png" alt="" srcset="">
+
+        <hr class="hr-city">
+        <p class="temp"><%= temperature %> ºC<img class="thermo" src="images/thermometer.png" alt="" srcset=""></p>
+        <p class="description"><%= description %></p>
+    </div>
+    <div class="bottom-block">
+        <p class="inner-block">Feels like: <%= feelsLike %> ºC<br>Min. Temperature: <%= minTemperature %> ºC <br> Max.
+            Temperature <%= maxTemperature %> ºC
+        </p>
+        <p class="inner-block">Wind: <%= speed %> km/h<br>Visibility: <%= visibility %> m<br>Humidity: <%= humidity %>%
+        </p>
+    </div>
+</div>
+
+<p class="footer">Developed by <a href="https://www.linkedin.com/in/shashank-vishwakarma-06978b1ab" target="_blank">Shashank Vishwakarma </a></p>
+
+
+<script src="js/card.js"></script>
+
+<%- include("partials/footer"); -%>
