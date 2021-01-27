@@ -14,7 +14,7 @@ app.use(express.static("public"));
 //const apiKey = "0f86c38ce50793666a731475cd0ef5de";
 
 //const coordApiUrl = "http://api.openweathermap.org/data/2.5/weather?lat=22.9734229&lon=78.6568942&appid=0f86c38ce50793666a731475cd0ef5de&units=metric"
-var msg = ""
+var msg = "Success";
 function alert() {
     msg = "Error";
 }
@@ -97,7 +97,7 @@ app.post("/", function (req, res) {
                 visibility: visibile,
                 humidity: humi,
                 icon: imgCode,
-                message: "",
+                message: "Success",
             });
 
         })

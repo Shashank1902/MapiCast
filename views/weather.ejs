@@ -1,8 +1,7 @@
 <%- include("partials/header"); -%>
    
-<% if (message) { %>
+<% if (message === "Error") { %>
     <script>
-       var m = "<%= message %>";  
        alert("Sorry🥺 City not found! Redirecting to home page. \nTry again!");          
     </script>
 <% } %>
